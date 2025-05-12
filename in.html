@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In </title>
+    <title>Click on the box to move</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./CSS/in.css">
     <link rel="icon" type="images/svg+xml" href="./images/favicon.svg">
 </head>
-<body>
-    <h1>
-        "The way you see nature is just the beginning. Step into it, and your perspective will expand beyond limits."
-    </h1>
-    <a href="index.html" class="home-button">👁️</a>
 
-    <div class="scene">
-        <div class="cube" id="cube">
-            <!-- <div class="face front">Front</div> -->
-            <div class="face back"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="face right"></div>
-            <div class="face bottom"></div>
+<body>
+
+
+      <video autoplay muted loop playsinline class="background-video">
+        <source src="./img/back01.mp4" type="video/mp4" />
+      </video>
+
+      <audio id="bg-music" autoplay loop>
+        <source src="in.mp3" type="audio/mpeg">
+    </audio>
+    
+      <div class="content">
+        <div class="menu">
+          <a href="./index.html" class="home-button">SEE</a>
         </div>
-    </div>
+        <div class="scene">
+            <div class="cube" id="cube">
+                <div class="face front outer"></div>
+                <div class="face back outer"></div>
+                <!-- <div class="face left outer"></div> -->
+                <div class="face right outer"></div>
+                <div class="face top outer"></div>
+                <div class="face bottom outer"></div>
+                
+                <div class="face front inner"></div>
+                <div class="face back inner"></div>
+                <!-- <div class="face left inner"></div> -->
+                <div class="face right inner"></div>
+                <div class="face top inner"></div>
+                <div class="face bottom inner"></div>            
+        </div>
+    
+      </div>
+
 
     <script src="JS/in.js"></script>
 </body>

@@ -5,14 +5,16 @@ let rotateY = 30;
 let isDragging = false;
 let prevX, prevY;
 
-// 자동 회전
+
 function autoRotate() {
-    rotateY += 1;
+    rotateY += 0.5;
     cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 }
+
+
 let rotationInterval = setInterval(autoRotate, 50);
 
-// 마우스로 조작
+
 document.addEventListener("mousedown", (e) => {
     isDragging = true;
     prevX = e.clientX;
@@ -38,7 +40,21 @@ document.addEventListener("mouseup", () => {
 
 // 버튼 클릭 이벤트
 function pressButton() {
-    alert("SOS!");
+    alert("If you truly want to see what you've been blind to, click here.");
     window.location.href = "./in.html"; // 클릭 시 in.html로 이동
 }
+
+
+
+  const aboutBtn = document.getElementById('aboutBtn');
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('closeBtn');
+
+  aboutBtn.addEventListener('click', () => {
+    popup.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.add('hidden');
+  });
 

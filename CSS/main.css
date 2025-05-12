@@ -1,65 +1,150 @@
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #050505;
-    perspective: 600px;
-    overflow: hidden;
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
-.scene {
-    width: 200px;
-    height: 200px;
-    position: relative;
+body {
+    overflow: hidden;
+    overflow-x: hidden;
+    font-family: 'Quicksand', sans-serif;
+    background-image: url('../img/bird.JPG');
+}
+
+
+  .menu {
+    padding-left: 5%;
+    padding-top: 0.8rem;
+    width: 1.2rem;
+    position: fixed;
+    color: rgb(89, 89, 89);
+    flex-direction: column;
+    top: 10px; 
+    font-size: 0.8rem; 
+    z-index: 2; 
+}
+
+.name{
+    padding-left: 5%;
+    padding-top: 0.8rem;
+    position: fixed;
+    color: rgb(152, 150, 150);
+    flex-direction: column;
+    top: 40px; 
+    font-size: 0.5rem; 
+    z-index: 2; 
+}
+
+.home2 {
+    margin-left: 90%;
+    padding-top: 0.8rem;
+    width: 1.2rem;
+    color: aliceblue;
+    position: fixed;
+    flex-direction: column;
+    top: 50px; 
+    font-size: 2rem; 
+    z-index: 1; 
+}
+
+
+  .scene {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px; 
 }
 
 .cube {
-    width: 200px;
-    height: 200px;
-    position: absolute;
+    width: 400px;
+    height: 400px;
+    position: relative;
     transform-style: preserve-3d;
     transform: rotateX(-20deg) rotateY(30deg);
-    transition: transform 0.1s linear;
+    transition: transform 0.3s ease;
 }
 
 .face {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 2px solid #999;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid rgb(224, 224, 224);
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
     color: white;
+    background-size: cover;
+    background-position: center;
 }
 
-/* 6개의 면 설정 */
-.front  { background: rgb(71, 251, 185);    transform: rotateY(  0deg) translateZ(100px); }
-.back   { background: rgb(52, 204, 255);   transform: rotateY(180deg) translateZ(100px); }
-.left   { background: rgb(230, 255, 2);  transform: rotateY(-90deg) translateZ(100px); }
-.right  { background: rgb(255, 255, 255); transform: rotateY( 90deg) translateZ(100px); }
-.top    { background: rgb(7, 34, 241) ;  transform: rotateX( 90deg) translateZ(100px); }
-.bottom { background: rgb(255, 60, 226); transform: rotateX(-90deg) translateZ(100px); }
 
-/* 버튼 스타일 */
+.front  { background: url('../img/box.png'); transform: rotateY(0deg)   translateZ(200px); }
+.back   { background: url('../img/box.png'); transform: rotateY(180deg) translateZ(200px); }
+.right  { background: url('../img/box.png'); transform: rotateY(90deg)  translateZ(200px); }
+.left   { background: url('../img/box.png'); transform: rotateY(-90deg) translateZ(200px); }
+.top    { background: url('../img/box.png'); transform: rotateX(90deg)  translateZ(200px); }
+.bottom { background: url('../img/box.png'); transform: rotateX(-90deg) translateZ(200px); }
+
 .button {
-    width: 40px;
-    height: 40px;
-    background-image: url('../img/tree.png');
+    width: 80px;
+    height: 80px;
+    background-image: url('../img/birdb.png');
     border-radius: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    border: 2px solid gray;
+    border: 2px solid rgb(180, 180, 180);
 }
 
 .button:hover {
-    background-image: url('../img/main tree.png');
+    background-image: url('../img/errobb.png');
+}
+
+
+.popup { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    
+}
+
+.hidden {
+    display: none;
 }
